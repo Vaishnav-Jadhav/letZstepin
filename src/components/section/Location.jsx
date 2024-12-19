@@ -1,5 +1,6 @@
 import { useState } from "react";
-import'../Animation.css'
+import'../Animation.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 export function Location()
@@ -17,7 +18,7 @@ export function Location()
          <div className="rowContainer w-100 bg-light p-5">
            <div className="w-75 m-auto d-flex " >
                 <div>
-                    <img src={data.img} width={500}  className="rounded-4 shadow-lg"/>
+                    <LazyLoadImage src={data.img} width={500}  className="rounded-4 shadow-lg" effect="blur"/>
                 </div>
                 <div className="ms-5">
                     <h2 className="fw-bold">{data.title}</h2>

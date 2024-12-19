@@ -1,6 +1,7 @@
 import { useState } from "react";
-import'./Animation.css'
-
+import'./Animation.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+// <img src={props.data.img} className="w-50 cover-full rounded-4 shadow"/>
 
 export function RowA(props)
 {  
@@ -13,7 +14,8 @@ export function RowA(props)
             </div>
             <div className="d-flex justify-content-around p-3 w-100 m-auto">
                 <div className="rounded p-2 ">
-                    <img src={props.data.img} className="w-50 cover-full rounded-4 shadow"/>
+                   
+                    <LazyLoadImage src={props.data.img} className="w-50 cover-full rounded-4 shadow" effect="blur"/>
                 </div>
                 <div>
                     <p className="text-justify fs-5">{props.data.discription}</p>

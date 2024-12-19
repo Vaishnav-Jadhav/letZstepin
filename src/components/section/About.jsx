@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import '../section/About.css'
+import '../section/About.css';
+
 
 export function About()
 {
