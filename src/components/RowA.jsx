@@ -1,26 +1,33 @@
-import { useState } from "react";
-import'./Animation.css';
 import { LazyLoadImage } from "react-lazy-load-image-component";
-// <img src={props.data.img} className="w-50 cover-full rounded-4 shadow"/>
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-export function RowA(props)
-{  
-   
+export function RowA({ data }) {
+  return (
+    <div className="w-100 bg-white py-4">
+      {/* Title */}
+      <div className="mb-3">
+        <h2 className="text-center text-info">{data.title}</h2>
+      </div>
 
-    return (
-        <div className="rowContainer bg-white w-100">
-            <div className="m-2">
-                    <h2 className="text-center p-2 text-info">{props.data.title}</h2>
-            </div>
-            <div className="d-flex justify-content-around p-3 w-100 m-auto">
-                <div className="rounded p-2 ">
-                   
-                    <LazyLoadImage src={props.data.img} className="w-50 cover-full rounded-4 shadow" effect="blur"/>
-                </div>
-                <div>
-                    <p className="text-justify fs-5">{props.data.discription}</p>
-                </div>
-            </div>
+      {/* Content */}
+      <div className="container">
+        <div className="row align-items-center">
+          {/* Image */}
+          <div className="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
+            <LazyLoadImage
+              src={data.img}
+              className="img-fluid rounded-4 shadow"
+              effect="blur"
+              style={{ maxWidth: "500px" }}
+            />
+          </div>
+
+          {/* Description */}
+          <div className="col-12 col-md-6">
+            <p className="fs-5 text-center text-md-start">{data.discription}</p>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
